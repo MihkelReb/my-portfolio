@@ -1,38 +1,161 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80)),
+              url("/public/Images/bg-abstract.jpeg") center/cover no-repeat;
+  height: 100vh;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+
+.background-2 {
+  padding: 0 50px;
+  margin: 95px auto;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 1717px;
+  max-height: 1080px;
+  mix-blend-mode: saturated;
+  filter: blur(1.5px);
+  z-index: -1;
+}
+
+.Name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 34px;
+  grid-area: Name;
+}
+
+.jobTitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 38px;
+  grid-area: jobTitle;
+}
+
+.Portfolio {
+  font-family: 'Roboto', sans-serif;
+  font-size: 75px;
+  grid-area: Portfolio;
+}
+
+.footer {
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 3;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.page-container {
+  margin-top: -95px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-rows: 95px 1fr 95px;
+  grid-template-columns: 225px 1fr 310px;
+  grid-template-areas:
+    "Name . jobTitle"
+    ". menu-container Portfolio"
+    ". footer .";
+  border: 2px solid white;
+  width: 100vw;
+  height: 100vh;
+  max-width: 1717px;
+  max-height: 1165px;
+  place-items: center;
+}
+
+.header {
+  grid-area: header;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.button-text {
+  transform: rotate(-45deg);
+  font-size: 25px;
+}
+
+.menu-container {
+  grid-area: menu-container;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  transform: rotate(45deg);
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgb(221, 16, 16);
+  gap: 3px;
+}
+
+.square {
+  width: 15vw;
+  height: 15vw;
+  max-width: 175px;
+  max-height: 175px;
+  border: 2px solid white;
+}
+
+.square-main {
+  background: #110F10 0% 0% no-repeat padding-box;
+}
+
+.square-secondary-left {
+  background: #231F20BF 0% 0% no-repeat padding-box;
+}
+
+.square-secondary-middle {
+  background: #231F20 0% 0% no-repeat padding-box;
+}
+
+.square-secondary-right {
+  background: transparent;
+}
+
+.square1 {
+  grid-area: 2 / 1;
+}
+.square2 {
+  grid-area: 1 / 2;
+}
+.square3 {
+  grid-area: 3 / 1;
+}
+.square4 {
+  grid-area: 2 / 2;
+}
+.square5 {
+  grid-area: 4 / 1;
+}
+.square6 {
+  grid-area: 3 / 2;
+}
+.square7 {
+  grid-area: 2 / 3;
+}
+.square8 {
+  grid-area: 4 / 2;
+}
+.square9 {
+  grid-area: 3 / 3;
+}
+.square10 {
+  grid-area: 4 / 3;
+}
+.square11 {
+  grid-area: 3 / 4;
+}
+
+@media (max-width: 767px) {
+  .menu-container {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
 }
