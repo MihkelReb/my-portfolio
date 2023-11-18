@@ -8,7 +8,26 @@ body {
               url("/public/Images/bg-abstract.jpeg") center/cover no-repeat;
   height: 100vh;
   color: white;
-  }
+  width: 1717px;
+  height: 1080px;
+  overflow: hidden;
+}
+
+.WIP {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 100px;
+  text-align: center;
+  width: 3000px;
+  transform: translateX(-50%) rotate(45deg);
+  background-color: rgba(184, 184, 10, 0.418);
+  border: 2px solid black;
+}
+  
+.WIPtekst {
+  border: 2px solid black;
+}
 
 .background-2 {
   padding: 0 50px;
@@ -24,6 +43,7 @@ body {
   z-index: -1;
 }
 
+/* 
 .Name {
   font-family: 'Roboto', sans-serif;
   font-size: 34px;
@@ -158,4 +178,4 @@ body {
   .menu-container {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
-}
+} */
