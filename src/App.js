@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   return (
-      <div>
+      <div className='overlay'>
         <div>
           <img src='/Images/placeholder.png' alt='Secondary Background' className="background-2"/>
         </div>
