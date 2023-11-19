@@ -33,7 +33,7 @@ class App extends React.Component {
     return (
       <div>
         <div>
-          <img src='/Images/background-3.png' alt='Secondary Background' className='background-3' />
+          <img src='/Images/background-3.webp' alt='Secondary Background' className='background-3' />
           <img src='/Images/outline-top.png' alt='White Outline Top' className='outline-top' />
           <img src='/Images/outline-bottom.png' alt='White Outline Bottom' className='outline-bottom' />
         </div>
