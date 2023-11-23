@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="290" height="90" viewBox="0 0 290 90">
+
+	<g id="PortfolioSVG">
+		<text id="PortfolioText" transform="translate(0 71)" fill="#fff" font-size="75" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Portfolio</tspan></text>
+	</g>
+
+  <g id="NameSVG" width="222" height="41" viewBox="0 0 222 41">
+	<text id="NameText" data-name="Mihkel Rebane" transform="translate(0 32)" fill="#fff" font-size="34" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Mihkel Rebane</tspan></text>
+  </g>
+
+  <g id="TitleSVG" width="370" height="46" viewBox="0 0 370 46">
+	<text id="TitleText" data-name="Junior Web-Developer" transform="translate(0 36)" fill="#fff" font-size="38" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Junior Web-Developer</tspan></text>
+  </g>
+</svg>

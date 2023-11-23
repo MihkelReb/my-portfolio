@@ -1,38 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 
+
 body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.64)), center/cover no-repeat;
-  height: 100vh;
+  /* background: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.64)); */
+  background-color: #110F10;
   color: white;
-  /* overflow: hidden; */
   font-family: 'Roboto', sans-serif;
-} 
+  overflow-x: hidden;
+}
+
+.ThePage {
+  position: relative;
+  min-height: 100vh;
+  max-width: 1346px;
+  margin: 0 auto;;
+}
+
+.background-3, .ImagesDiv, .page-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1346px;
+}
 
 .background-3 {
   margin-top: 95px;
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%);
-  max-width: 1346px;
-  max-height: 770px;
-  z-index: -1;
-  object-fit: cover;
   mix-blend-mode: saturated;
   filter: blur(1.5px);
-  z-index: -1;
+  z-index: 1;
   overflow: hidden;
 }
 
+.ImagesDiv {
+  margin-top: 95px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 770px;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.page-container {
+  height: 910px;
+  width: 1346px;
+  display: grid;
+  grid-template-rows: 95px 1fr 45px;
+  justify-items: center;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.outline-top {
+  max-width: 1346px;
+  align-self: start;
+}
+
+.outline-bottom {
+  max-width: 1346px;
+  align-self: end
+}
 
 .Introduction {
   position: absolute;
-  margin-top: 95px;
-  padding-left: -25px;
-  padding-right: -25px;
   top: 0%;
   left: 50%;
   transform: translate(-50%);
@@ -59,7 +90,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .CloseModal {
@@ -73,174 +104,124 @@ body {
 
 .WIP{
   top: 0%;
-  left: 50%;
+  left: 57%;
   transform: translate(-50%);
   position: absolute;
   color: red;
-  z-index: 100;
+  z-index: 10;
+  border: red 2px solid;
+  font-weight: bold;
 }
 
-.outline-top {
-  position: absolute;
-  margin-top: 15px;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%);
-  max-width: 1346px;
-  min-width: 703px;
-  /* border: 2px solid rgb(13, 0, 128); */
-}
-
-.outline-bottom {
-  position: absolute;
-  margin-top: 743px;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%);
-  max-width: 1346px;
-  /* border: 2px solid rgb(141, 255, 141); */
-}
-
-.Name {
-  grid-area: Name;
-  font-size: 34px;
-  position: absolute;
+.menu-container-wrapper{
+  margin-left: 107px;
+  grid-row: 2;
   width: max-content;
-  margin-top: 50px;
-  margin-left: 280px;
-}
-
-.jobTitle {
-  grid-area: jobTitle;
-  font-size: 38px;
-  position: absolute;
-  width: max-content;
-  margin-top: 90px;
-  margin-left: -335px;
-}
-
-.Portfolio {
-  grid-area: Portfolio;
-  font-size: 75px;
-  position: absolute;
-  width: max-content;
-  margin-top: 45px;
-  margin-left: -250px;
-  font-weight: 700;
-}
-
-.header {
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%);
-  width: 1346px;
-  height: 250px;
-  z-index: -2;
-}
-
-.footer {
-  grid-area: footer;
-  grid-row: 3 / span 1;
-  grid-column: 1 / span 3;
-  /* border-width: 2px 0 0 0;
-  border-style: solid;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-   */
-  text-align: left;
-  font-size: 15px;
-}
-
-.page-container {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 100%;
-  height: 100%;
-  /* min-width: 703px; */
-  min-width: 703px;
-  min-height: 920px;
-  max-width: 1350px;
-  max-height: 910px;
-
   display: grid;
-  grid-template-rows: 95px 1fr 45px;
-  grid-template-columns: 1fr 9fr 1fr;
-  grid-template-areas:
-    "Name header jobTitle"
-    ". menu-container Portfolio"
-    ". footer .";
-  /* border: 2px solid green; */
-  overflow: hidden;
+  height: 770px;
 }
 
 .menu-container {
-  overflow: hidden;
-  grid-area: menu-container;
+  margin-top: 22px;
+  transform: rotate(45deg);
   width: max-content;
   height: max-content;
-  position: absolute;
-  margin-left: 183px;
-  margin-top: 0px;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
   display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   gap: 3px;
-  z-index: -1;
-  
-  /* border: 2px solid rgb(221, 16, 16); */
+  /* margin-left: 109px;
+  margin-top: 22px; */
+}
+
+.header {
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  z-index: 15px;
+}
+
+.Name {
+  grid-row: 1;
+  grid-column: 3 / span 2;
+  width: 100%;
+  margin-left: 15px;
+}
+
+.jobTitle {
+  grid-row: 2;
+  grid-column: 4 / span 3;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.Portfolio {
+  grid-row: 3;
+  grid-column: 5 / span 2;
+  font-weight: 700;
+  width: 100%;
+  margin-left: 40px;
+}
+
+#PortfolioText {
+  font-size: 45px;
+}
+
+.footer {
+  text-align: center;
+  grid-row: 3;
+  font-size: 15px;
+  height: 45px;
+  width: 1346px;
 }
 
 .button-text {
-  position: relative;
+  display: grid;
   transform: rotate(-45deg);
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  pointer-events: none;
   font-size: 25px;
   top: 45px;
-  text-align: center;
-}
-
-.button-text-cv {
-  position: relative;
-  transform: rotate(-45deg);
-  font-size: 25px;
-  top: -20px;
-  left: 39px;
 }
 
 .CV {
-  position: relative;
-  transform: rotate(-45deg);
-  top: -5px;
-  left: 86px;
+  margin-top: 25px;
 }
 
-.square {
-  position: relative;
-  width: 175px;
-  height: 175px;
-  border: 2px solid white;
+.DL {
+  margin-top: -85px;
 }
 
 .sq-main {
   background: #110F10 0% 0% no-repeat padding-box;
   cursor: pointer;
+  width: 175px;
+  height: 175px;
+  border: 2px solid white;
 }
 
 .sq-left {
   background: #231f2098 0% 0% no-repeat padding-box;
+  width: 175px;
+  height: 175px;
+  border: 2px solid white;
 }
 
 .sq-middle {
   background: #231F20 0% 0% no-repeat padding-box;
+  width: 175px;
+  height: 175px;
+  border: 2px solid white;
 }
 
 .sq-right {
   background: transparent;
+  width: 175px;
+  height: 175px;
+  border: 2px solid white;
 }
 
 .hover:hover {
@@ -261,51 +242,101 @@ body {
 }
 
 .sq2 {
-  grid-area: 9 / 9;
+  grid-area: 1 / 2;
 }
 
 .sq1 {
-  grid-area: 10 / 8;
+  grid-area: 2 / 1;
 }
 
 .sq4 {
-  grid-area: 10 / 9;
+  grid-area: 2 / 2;
 }
 
 .sq7 {
-  grid-area: 10 / 10;
+  grid-area: 2 / 3;
 }
 
 .sq3 {
-  grid-area: 11 / 8;
+  grid-area: 3 / 1;
 }
 
 .sq6 {
-  grid-area: 11 / 9;
+  grid-area: 3 / 2;
 }
 
 .sq9 {
-  grid-area: 11 / 10;
+  grid-area: 3 / 3;
 }
 
 .sq11 {
-  grid-area: 11 / 11;
+  grid-area: 3 / 4;
 }
 
 .sq5 {
-  grid-area: 12 / 8;
+  grid-area: 4 / 1;
 }
 
 .sq8 {
-  grid-area: 12 / 9;
+  grid-area: 4 / 2;
 }
 
 .sq10 {
-  grid-area: 12 / 10;
+  grid-area: 4 / 3;
 }
 
-/* @media (max-width: 540px) {
-  .menu-container {
-    left: 50.7%;
+@media (max-width: 720px) {
+
+  .Name, .jobTitle, .Portfolio {
+    width: 100%;
+    margin-left: 42px;
+  } 
+  
+  .Name {
+    grid-row: 1;
+    grid-column: 4 / span 2;
   }
-} */
+
+  .jobTitle {
+    grid-row: 2;
+    grid-column: 4 / span 3;
+  }
+
+  .Portfolio {
+    grid-row: 3;
+    grid-column: 5 / span 2;
+    font-weight: 700;
+  }
+
+  #PortfolioText {
+    font-size: 45px;
+  }
+
+  .menu-container {
+    margin-top: 60px;
+  }
+
+  .sq2, .sq8, .sq11, .sq9, .sq3, .sq7 , .sq4, .sq-right, .sq-left, .sq-middle  {
+    grid-area: none;
+    background: transparent;
+    width: 175px;
+    height: 175px;
+    border: none;
+  }
+
+  .sq1 {
+    grid-area: 2 / 1;
+  }
+
+  .sq6 {
+    grid-area: 3 / 2;
+  }
+
+  .sq5 {
+    grid-area: 2 / 2;
+  }
+
+  .sq10 {
+    grid-area: 3 / 3;
+  }
+}
