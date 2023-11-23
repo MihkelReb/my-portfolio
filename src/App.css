@@ -29,8 +29,7 @@ body {
   margin-top: 95px;
   mix-blend-mode: saturated;
   filter: blur(1.5px);
-  z-index: 1;
-  overflow: hidden;
+  z-index: -2;
 }
 
 .ImagesDiv {
@@ -38,8 +37,7 @@ body {
   display: grid;
   grid-template-rows: 1fr 1fr;
   height: 770px;
-  z-index: 2;
-  overflow: hidden;
+  z-index: -1;
 }
 
 .page-container {
@@ -48,8 +46,6 @@ body {
   display: grid;
   grid-template-rows: 95px 1fr 45px;
   justify-items: center;
-  z-index: 3;
-  overflow: hidden;
 }
 
 .outline-top {
@@ -62,18 +58,26 @@ body {
   align-self: end
 }
 
+.modal-open {
+  overflow: hidden;
+}
+
 .Introduction {
   position: absolute;
   top: 0%;
   left: 50%;
   transform: translate(-50%);
+
   max-width: 1010px;
-  max-height: 860px;
+  max-height: 865px;
   width: 100vw;
+  height: 100vh;
+
   background-color: rgba(20, 20, 20, 0.95);
   overflow: scroll;
   border: 3px rgba(255, 255, 255, 0.5) solid;
   border-radius: 15px;
+  text-align: center;
 }
 
 .Introduction:focus {
@@ -81,7 +85,8 @@ body {
 }
 
 .IntroductionModal {
-  margin: 25px;
+  margin: 0;
+  padding: 20px;
 }
 
 .Overlay {
@@ -93,13 +98,16 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.CloseModal {
+.CloseModalButton {
+  color: rgb(255, 255, 255);
+  line-height: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  cursor: pointer;
   position: absolute;
-  margin-top: 2px;
-  margin-right: 5px;
-  text-align: end;
-  font-weight: bold;
-  font-size: large;
+  right: 0px; top: 0px;
+  background-color: transparent;
+  border: medium;
 }
 
 .WIP{
@@ -285,7 +293,12 @@ body {
   grid-area: 4 / 3;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 767px) {
+
+  body {
+    overflow-x: hidden !important; /* Hide horizontal overflow */
+    overflow-y: auto !important; /* Hide vertical overflow */
+  }
 
   .Name, .jobTitle, .Portfolio {
     width: 100%;
@@ -316,7 +329,7 @@ body {
     margin-top: 60px;
   }
 
-  .sq2, .sq8, .sq11, .sq9, .sq3, .sq7 , .sq4, .sq-right, .sq-left, .sq-middle  {
+  .sq8, .sq9, .sq3, .sq4, .sq-middle  {
     grid-area: none;
     background: transparent;
     width: 175px;
@@ -329,7 +342,7 @@ body {
   }
 
   .sq6 {
-    grid-area: 3 / 2;
+    grid-area: 3 / 3;
   }
 
   .sq5 {
@@ -337,6 +350,14 @@ body {
   }
 
   .sq10 {
-    grid-area: 3 / 3;
+    grid-area: 3 / 2;
+  }
+
+  .sq-middle {
+  background: #231F20 0% 0% no-repeat padding-box;
+  width: 175px;
+  height: 175px;
+  border: 2px solid white;
+  grid-area: 4 / 3;
   }
 }

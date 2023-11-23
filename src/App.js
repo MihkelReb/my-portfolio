@@ -52,7 +52,7 @@ class App extends React.Component {
     const { activeMenu } = this.state;
     return (
       <div className='ThePage'>
-        {/* <div className='WIP'>Currently a WIP and not yet mobile friendly, will work on that next</div> */}
+        <div className='WIP'>Currently a WIP and not yet mobile friendly - working on it</div>
             <div className='ImagesDiv'>
               <img src='/Images/outline-top.webp' alt='White Outline Top' className='outline-top' />
               <img src='/Images/outline-bottom.webp' alt='White Outline Bottom' className='outline-bottom' />
@@ -152,17 +152,19 @@ class MenuAbout extends Component {
 
   handleOpenModal = () => {
     this.setState({ isModalOpen: true });
+    document.body.classList.add('modal-open');
   };
-
+  
   handleCloseModal = () => {
     this.setState({ isModalOpen: false });
+    document.body.classList.remove('modal-open');
   };
 
   render() {
 		return (
       <div className='menu-container-wrapper'>
         <div className="menu-container">
-          <div className="sq-main sq1 hover" onClick={() => this.props.onMenuChange('Menu')}></div>
+            <div className="sq-main sq1 hover" onClick={() => this.props.onMenuChange('Menu')}></div>
             <div className='button-text sq1'>
                 <img src='/Images/Buttons/home.svg' alt='Home'/>
             </div>
@@ -185,18 +187,22 @@ class MenuAbout extends Component {
                 onClick={this.handleOpenModal}>
             </div>
             <div className="button-text sq3">An Introduction</div>
-          <ReactModal
-            isOpen={this.state.isModalOpen}
-            onRequestClose={this.handleCloseModal}
-            contentLabel="Modal - Who is Mihkel"
-            className="Introduction"
-            overlayClassName="Overlay">
-            {this.state.textContent ? (
-              <div className='IntroductionModal' dangerouslySetInnerHTML={{ __html: this.state.textContent }} />
-            ) : (
-              <p>Loading content...</p>
-            )}
-          </ReactModal>
+            <ReactModal
+              isOpen={this.state.isModalOpen}
+              onRequestClose={this.handleCloseModal}
+              contentLabel="Modal - Who is Mihkel"
+              className="Introduction"
+              overlayClassName="Overlay">
+              <div className='IntroductionModal'>
+                  {this.state.textContent ? (
+                    <div dangerouslySetInnerHTML={{ __html: this.state.textContent }} />
+                  ) : (
+                    <div>
+                      <p>Loading content...</p>
+                    </div>
+                  )}
+              </div>
+            </ReactModal>
           <div className="sq-left sq8 hover" style={{ cursor: 'pointer' }} onClick={this.props.handleEmailClick}></div>
           <div className="button-text sq8">Email Me</div>
           <div className="sq-middle sq4"></div>
