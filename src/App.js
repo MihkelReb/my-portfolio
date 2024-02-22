@@ -77,7 +77,7 @@ class App extends React.Component {
                                                   handleProjectClick2={this.handleProjectClick2}
                                                   handleProjectClick3={this.handleProjectClick3}
                                                   handleProjectClick4={this.handleProjectClick4}/>}
-              <div className='footer'>© 2023 MihkelRebane.com - development began 16.11.2023</div>
+              <div className='footer'>© 2024 MihkelRebane.com</div>  //development began 16.11.2023, halted - 21-11.2023-22.02.2024
             </div>
             <div  className='background-3' ><img src='/Images/background-3.webp' alt=' Background'/></div>
       </div>
