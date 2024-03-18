@@ -40,7 +40,7 @@ class App extends React.Component {
   };
 
   handlePdfOpen = () => {
-    window.open('/CV FIN - Mihkel Rebane - 2024', '_blank');
+    window.open('/CV FIN - Mihkel Rebane - 2024.pdf', '_blank');
   };
 
   handleButtonClick = () => {
